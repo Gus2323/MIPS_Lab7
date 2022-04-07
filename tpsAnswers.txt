@@ -2,24 +2,29 @@
 TPS Activity 1
 --------------
 1.
+Procedure - A function that doesn't return a value.
+Function - Code you can use over and over again .
+Method - A function that closes over a set of variables, that is, a closure. 
 2.
 3.
-4.
-5.
-6.
-7.
-8.
-9.
-10.
-11.
+4. Line 20 adds registers $a0 and $a1 into register $v0. It then returns the address
+5. No because j will not return the address and SUM can be called anywhere in the program.
+6. We are not running line 
+7. We stored 0 to the return address
+8. We should return to line 14 0x00400020
+9. The address changed because it took 3 lines of code to execute that action.
+10. The new return address is line 15
+11. We can use jal instruction. This will same the return address
 12.
 
 --------------
 TPS Activity 2
 --------------
-1.
-2.
-3.
-4.
-5.
+1. 38
+2. It assigns $a0 with the sum of $zero and $s0 which is 5. Then it calls sum and loads the argument into it.
+3. Because we used a jal instruction so it knows where to go. 
+It should return back to SUM but the address return to the return address of SUM.
+To resolve this you should save the value of $ra into the stack and restore it later.
+4. In line 26 we stored a different value so we no longer have the value. To resolve this we should back up the stack pointer.
+5. We store m to s0 but in main we store x to s0
 6.

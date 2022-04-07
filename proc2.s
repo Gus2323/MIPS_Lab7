@@ -21,10 +21,24 @@ MAIN:	la $t0, x
 		j END
 
 		
-SUM: 	la $t0, m
+SUM: 	
+		#backup $s0, $a0, and $ra from SUM
+		addi $sp, $sp, -12
+		sw $s0, 0($sp)
+		sw $a0, 4($sp)
+		sw $ra, 8($sp)
+
+		la $t0, m
 		lw $s0, 0($t0)		# s0 = m
 		add $a0, $s0, $a0	# Update a0 as new argument for SUB
 		jal SUB
+
+		#restore a0, s0, ra
+		lw $s0, 0($sp)
+		lw $a0, 4($sp)
+		lw $ra, 8($sp)
+		addi $sp, $sp, 12
+
 		add $v0, $a0, $v0
 		jr $ra		
 		

@@ -1,16 +1,19 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int sub(int a) {
+int sub(int a)
+{
     int b = 2;
     return a - b;
 }
 
-int sum(int n) {
+int sum(int n)
+{
     int m = 15;
     return n + sub(m + n);
 }
 
-int main() {
+int main()
+{
     int x = 5, y = 10;
 
     y = y + x + sum(x);
